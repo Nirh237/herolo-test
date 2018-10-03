@@ -1,0 +1,227 @@
+.Rectangle {
+    width: 375px;
+    height: 156px;
+    background-color: #ffffff;
+    position: relative;
+    top: 19px;
+  }
+
+  .AdminHome {
+    width: 375px;
+    height: 667px;
+    background-color: #ececec;
+  }
+
+  .START-DATE {
+
+    
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #9b9b9b;
+    display: inline;
+
+    position: relative;
+    left: 52px;
+    top: 20px;
+
+  }
+
+  .END-DATE {
+   
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #9b9b9b;
+    display: inline;
+    position: absolute;
+    right:  57.5px;
+    top: 25px;
+  }
+
+  .Line {
+    width: 1px;
+    height: 64px;
+    border: solid 1px #979797;
+    position: relative;
+    left:188px;
+    top: 26px;
+  }
+
+  .layer {
+    width: 135px;
+    height: 42px;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1.1px;
+    text-align: center;
+    color: #4a90e2;
+    position: relative;
+    bottom: 27px;
+    left: 28px;
+  }
+
+  .layer2{
+    @extend .layer;
+    position: absolute;
+    left: 216px;
+    bottom: 50px;
+
+  }
+
+  .ACTIVE {
+    width: 65px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #7ed321;
+    position: relative;
+    bottom: 10px;
+    left: 155px;
+  }
+
+
+  .Rectangle-Copy {
+    width: 375px;
+    height: 133px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 229px;
+  }
+
+  .ORDERS-RECEIVED {
+    width: 135px;
+    height: 18px;
+    font-family: LucidaGrande;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #9b9b9b;
+    white-space: nowrap;
+    position: absolute;
+    top: 20px;
+    left: 120px;
+  }
+
+  .layer3{
+    @extend .layer;
+    position: absolute;
+    top: 56px;
+    left: 132px;
+  }
+
+  .Rectangle-Copy2 {
+      @extend .Rectangle-Copy;
+      position: absolute;
+      top: 372px;
+  }
+
+  .WEEKLY-BUDGET {
+    width: 122px;
+    height: 18px;
+    font-family: LucidaGrande;
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #9b9b9b;
+    white-space: nowrap;
+    position: absolute;
+    top: 20px;
+    left: 126.5px;
+  }
+
+  .layer4{
+      @extend .layer;
+      position: absolute;
+      top: 56px;
+      left: 132px;
+      
+  }
+
+  .Rectangle-Copy3 {
+    @extend .Rectangle-Copy;
+    position: absolute;
+    top: 515px;
+}
+
+.Order-Details {
+    width: 141px;
+    height: 30px;
+    font-family: Roboto;
+    font-size: 26px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #4a4a4a;
+    white-space: nowrap;
+    position: relative;
+    top: 53px;
+    left: 145px;
+  }
+
+  .groceries_icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    position: absolute;
+    top: 40px;
+    left: 80px;
+  }
+
+  .Chevron-Right {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    position: absolute;
+    left: 335px;
+    top: 47px;
+  }
+
+  .ORDERSUBMITTEDED {
+    width: 65px;
+    height: 24px;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    text-align: center;
+    color: #7ed321;
+    position: relative;
+    bottom: 10px;
+    left: 103px;
+    white-space: nowrap;
+  }
