@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import MovieReducer from '../reducers/auth';
+import MovieReducer from '../reducers/getMoviesList';
 
 
 

@@ -14,7 +14,7 @@ export const setMovie = (movies) => ({
 export const getMovies = () => {
   return (dispatch) => {
 
-    return axios.post(`http://www.omdbapi.com/?s=Batman&page=1&apikey=98f17da2`)
+    return axios.post(`http://www.omdbapi.com/?s=Superman&page=1&apikey=98f17da2`)
       .then(res => {
         console.log(res);
         
@@ -42,3 +42,4 @@ export const getMovies = () => {
 };
 
 
+//http://www.omdbapi.com/?s=Batman&page=1&apikey=98f17da2

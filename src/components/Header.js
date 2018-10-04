@@ -9,7 +9,7 @@ export const Header = () => (
     <div className="content-container">
       <div className="header__content" >
         <div className="header__title" >
-      Herolo Test
+      Herolo Cinema
         </div>
        
       </div>
