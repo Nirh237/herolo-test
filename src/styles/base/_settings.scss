@@ -13,3 +13,20 @@ $m-size: 1.6rem;
 $l-size: 3.2rem;
 $xl-size: 4.8rem;
 $desktop-breakpoint: 45rem;
+
+.flex {
+    display: flex;
+ 
+    &.d-row {
+     flex-direction: row;
+    }
+ 
+    &.d-col {
+     flex-direction: column;
+    }
+ 
+    &.j-space-between {
+      justify-content: space-between;
+    }
+ 
+  }

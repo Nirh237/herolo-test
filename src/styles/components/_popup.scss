@@ -1,5 +1,6 @@
 .modal {
     font-size: 12px;
+  
  
   }
   .modal > .headerPopup {
@@ -60,5 +61,22 @@
     justify-content:flex-end;
   }
 
+  .input-form {
+    span {
+      font-size: 14px;
+      padding: 3px 0px;
+      font-weight: 600;
+  
+    }
+
+    input {
+      padding: 3px 5px;
+      border: 1px solid #7f7f7f;
+      width: 300px;
+      border-radius: 4px;
+    }
+  }
+
+  
 
   

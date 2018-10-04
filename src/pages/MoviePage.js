@@ -12,7 +12,6 @@ import MovieListItem from '../components/MovieListItem';
 
 
 
-
 class MoviePage extends React.Component {
 
   constructor(props) {
