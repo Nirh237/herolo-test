@@ -1,15 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
-import { getMovies } from '../actions/getMoviesList';
+import { getMovieByTitle } from '../actions/movies';
 import MovieListItem from '../components/MovieListItem';
-
-
-
-
-
-
-
+import AddMovieModal from '../components/AddMovieModal';
 
 
 class MoviePage extends React.Component {
@@ -17,59 +11,61 @@ class MoviePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      movies: this.props.movies,
-
-
+      movieTitleArry: ['Star wars', 'The Shawshank Redemption', 'The Godfather', 'The Dark Knight', '12 Angry Men', 'The Lord of the Rings: The Return of the King', 'Pulp Fiction','Batman v Superman'],
+      isAddMovieModalOpen: false
     };
   };
 
+  openModal = () => {
+    
+      this.setState(() => ({
+        isAddMovieModalOpen: true
+      }))
+  }
 
-
-  componentDidMount() {
-    this.props.getMovies()
-      .then(result => this.setState({ movies: result }));
+closeModal = () => {
+    this.setState(() => ({
+      isAddMovieModalOpen: false
+  
+    }))
   }
 
 
 
+ componentDidMount() {
+    this.state.movieTitleArry.map((title) => {
+      this.props.getMovieByTitle(title) 
+    })
+    
+  }
 
   render() {
-
-
-
+const { movies } = this.props;
     return (
 
-      <div  className="Rectangle">
+      <div className="Rectangle">
         <Header />
-        <div className = "List">
-        {// order categorys list render
-          this.state.movies.length === 0 ? (
-            <div >
-              <span></span>
-            </div>
-          ) : (
-            this.state.movies.map((movie) => {
-            return <MovieListItem key={movie.Title} {...movie}/>;
-          }))
-        }
+        <div className="List">
+          { movies.map((movie) => { return <MovieListItem key={movie.Title} {...movie} />; }) }
         </div>
+        <button className="big-button" onClick={() => this.openModal()}> Add Movie </button>
+
+        <AddMovieModal
+        isModalOpen={this.state.isAddMovieModalOpen}
+        closeModal={this.closeModal} />
 
       </div>
     )
   };
 
 };
+
 const mapDispatchToProps = (dispatch) => ({
-  getMovies: () => dispatch(getMovies()),
-
-
-
+  getMovieByTitle: (title) => dispatch(getMovieByTitle(title)),
 });
 
 const mapStateToProps = (state) => ({
   movies: state.movies,
-
-
 });
 
 

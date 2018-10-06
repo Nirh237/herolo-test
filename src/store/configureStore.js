@@ -1,6 +1,6 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers, applyMiddleware, compose } from '../../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux';
 import thunk from 'redux-thunk';
-import MovieReducer from '../reducers/getMoviesList';
+import MovieReducer from '../reducers/movies';
 
 
 
@@ -11,6 +11,7 @@ export default () => {
   const store = createStore(
     combineReducers({
       movies: MovieReducer,
+      
      
 
 
@@ -18,7 +19,7 @@ export default () => {
     }),
     composeEnhancers(applyMiddleware(thunk))
   );
-
+  console.log('running');
   return store;
 };
 

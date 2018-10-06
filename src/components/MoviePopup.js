@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import Button from '@material-ui/core/Button';
 import Popup from "reactjs-popup";
-import { getMovies } from '../actions/getMoviesList';
+import { getMovieByTitle } from '../actions/movies';
 
 
 
@@ -135,7 +135,7 @@ class MoviePopup extends React.Component {
 
 
 const mapDispatchToProps = (dispatch) => ({
-    getMovies: () => dispatch(getMovies()),
+    getMovieByTitle: () => dispatch(getMovieByTitle()),
 
 
 
