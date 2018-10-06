@@ -11,48 +11,50 @@ class MoviePage extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      movieTitleArry: ['Star wars', 'The Shawshank Redemption', 'The Godfather', 'The Dark Knight', '12 Angry Men', 'The Lord of the Rings: The Return of the King', 'Pulp Fiction','Batman v Superman'],
+      movieTitleArry: ['Star wars', 'The Shawshank Redemption', 'The Godfather', 'The Dark Knight', '12 Angry Men', 'The Lord of the Rings: The Return of the King', 'Pulp Fiction', 'Batman v Superman'],
       isAddMovieModalOpen: false
     };
   };
 
   openModal = () => {
-    
-      this.setState(() => ({
-        isAddMovieModalOpen: true
-      }))
+
+    this.setState(() => ({
+      isAddMovieModalOpen: true
+    }))
   }
 
-closeModal = () => {
+  closeModal = () => {
     this.setState(() => ({
       isAddMovieModalOpen: false
-  
+
     }))
   }
 
 
 
- componentDidMount() {
+  componentDidMount() {
     this.state.movieTitleArry.map((title) => {
-      this.props.getMovieByTitle(title) 
+      this.props.getMovieByTitle(title)
     })
-    
+
   }
 
   render() {
-const { movies } = this.props;
+    const { movies } = this.props;
     return (
 
       <div className="Rectangle">
         <Header />
         <div className="List">
-          { movies.map((movie) => { return <MovieListItem key={movie.Title} {...movie} />; }) }
-        </div>
-        <button className="big-button" onClick={() => this.openModal()}> Add Movie </button>
+          {movies.map((movie) => { return <MovieListItem key={movie.Title} {...movie} />; })}
 
-        <AddMovieModal
-        isModalOpen={this.state.isAddMovieModalOpen}
-        closeModal={this.closeModal} />
+          <button className="big-button" onClick={() => this.openModal()}> Add Movie </button>
+
+          <AddMovieModal
+            isModalOpen={this.state.isAddMovieModalOpen}
+            closeModal={this.closeModal} />
+        </div>
+
 
       </div>
     )

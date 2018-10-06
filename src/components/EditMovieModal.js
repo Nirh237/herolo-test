@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
-import MovieForm from './MovieForm';
 import { startEditMovie } from '../actions/movies';
 
 
@@ -19,83 +18,74 @@ class EditMovieModal extends React.Component {
             Director: props.Director,
             Poster: props.Poster,
             imdbID: props.imdbID,
-
             error: ''
         };
-
     }
-formatTitle = (title) => {
-   return title.replace(/[^a-zA-Z ]/g, "").toLowerCase()
-    .split(' ')
-    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
-    .join(' ')
-}
 
-  onTitleChange = (e) => {
-        const Title = e.target.value; 
+    formatTitle = (title) => {
+        return title.replace(/[^a-zA-Z ]/g, "").toLowerCase()
+            .split(' ')
+            .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+            .join(' ')
+    }
+
+    onTitleChange = (e) => {
+        const Title = e.target.value;
         this.setState(() => ({ Title }));
     };
 
     onYearChange = (e) => {
-
-        const Year = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Year = e.target.value;
         this.setState(() => ({ Year }));
     };
 
     onRuntimeChange = (e) => {
-
-        const Runtime = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Runtime = e.target.value;
         this.setState(() => ({ Runtime }));
     };
 
     onGenreChange = (e) => {
-
-        const Genre = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Genre = e.target.value;
         this.setState(() => ({ Genre }));
     };
 
     onDirectorChange = (e) => {
-
-        const Director = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Director = e.target.value;
         this.setState(() => ({ Director }));
     };
 
     handleSave = (e) => {
-      e.preventDefault();
-       console.log(this.state)
-       debugger;
+        e.preventDefault();
+
         if (!this.state.Title || !this.state.Year || !this.state.Genre || !this.state.Runtime || !this.state.Director) {
             this.setState(() => ({ error: "Fields should be with values!" }));
-        } else if(this.props.movies.find((movie) => movie.Title === this.state.Title)) {
+        } else if (this.props.movies.find((movie) => movie.Title === this.state.Title)) {
             this.setState(() => ({ error: "Title Allready exist!!" }));
-        }else{
+        } else {
             this.setState(() => ({ error: "" }));
             this.props.startEditMovie(this.state.imdbID, {
-             Title: this.formatTitle(this.state.Title),
-             Year: this.state.Year,
-             Runtime: this.state.Runtime,
-             Genre: this.state.Genre,
-             Director: this.state.Director,
-             Poster: this.state.Poster
-             
-         });
-         this.props.closeModal();
+                Title: this.formatTitle(this.state.Title),
+                Year: this.state.Year,
+                Runtime: this.state.Runtime,
+                Genre: this.state.Genre,
+                Director: this.state.Director,
+                Poster: this.state.Poster
+
+            });
+            this.props.closeModal();
+        }
     }
-}
 
 
 
     render() {
-     
-
         return (
             <Modal
                 isOpen={!!this.props.isModalOpen}
                 onRequestClose={this.props.closeModal}
                 contentLabel="EDIT MOVIE"
                 closeTimeoutMS={200}
-                className="modal"
-            >
+                className="modal">
 
                 <h3 className="modal__title">Edit Movie</h3>
                 <p className="modal__body"></p>
@@ -108,8 +98,7 @@ formatTitle = (title) => {
                             type="text"
                             autoFocus
                             value={this.state.Title}
-                            onChange={this.onTitleChange}
-                        />
+                            onChange={this.onTitleChange} />
                     </div>
 
                     <div className="flex  d-col  input-form">
@@ -117,38 +106,34 @@ formatTitle = (title) => {
                         <input
                             type="text"
                             value={this.state.Year}
-                            onChange={this.onYearChange}
-                        />
+                            onChange={this.onYearChange} />
                     </div>
+
                     <div className="flex d-col  input-form">
-                        <span>Runtime:</span>
+                        <span>RUNTIME:</span>
                         <input
                             type="text"
                             autoFocus
                             value={this.state.Runtime}
-                            onChange={this.onRuntimeChange}
-                        />
+                            onChange={this.onRuntimeChange} />
                     </div>
+
                     <div className="flex d-col  input-form">
-                        <span>Genre:</span>
+                        <span>GENRE:</span>
                         <input
                             type="text"
                             value={this.state.Genre}
-                            onChange={this.onGenreChange}
-                        />
+                            onChange={this.onGenreChange} />
                     </div>
 
                     <div className="flex d-col  input-form">
-                        <span>Dirctor:</span>
+                        <span>DIRECTOR:</span>
                         <input
                             type="text"
                             value={this.state.Director}
-                            onChange={this.onDirectorChange}
-                        />
+                            onChange={this.onDirectorChange} />
                     </div>
-
                 </form>
-
 
                 <div className="flex d-row j-space-between">
                     <button className="button" onClick={this.handleSave}>Save</button>
@@ -156,13 +141,11 @@ formatTitle = (title) => {
                 </div>
             </Modal>
         )
-
     }
-
 }
+
 const mapStateToProps = (state, props) => ({
     movies: state.movies
-
 });
 
 const mapDispatchToProps = (dispatch, props) => ({
@@ -170,14 +153,3 @@ const mapDispatchToProps = (dispatch, props) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditMovieModal);
-
-     // <MovieForm
-                //     Title={this.props.Title}
-                //     Year={this.props.Year}
-                //     Runtime={this.props.Runtime}
-                //     Genre={this.props.Genre}
-                //     Director={this.props.Director}
-                //     onSubmit={this.onSubmit}
-
-
-                // />

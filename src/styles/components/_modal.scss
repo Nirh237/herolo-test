@@ -28,6 +28,8 @@
   
   .modal__title {
     margin: 0 0 $m-size 0;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bold;
   }
   
   .modal__body {
@@ -35,4 +37,15 @@
     font-weight: 300;
     margin: 0 0 $l-size 0;
     word-break: break-all;
+
+  }
+
+  .input-form {
+    span {
+      font-size: 14px;
+      padding: 3px 0px;
+      font-weight: 600;
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-weight: bold;
+    }
   }

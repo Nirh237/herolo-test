@@ -1,28 +1,35 @@
 // Big Button
 .big-button {
-    background: $purple;
+  position: relative;
+  align-items: flex-end;
+    background: $purple;  
     border: none;
     border-bottom: .6rem solid darken($purple, 10%);
     color: white;
     font-weight: bold;
-    font-size: $l-size;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 50px;
     margin-bottom: $xl-size;
     padding: 2.4rem;
     width: 100%;
+    
+    
   }
   
-  .big-button:disabled {
-    opacity: .5;
-  }
   
   // Button
   .button {
+    padding: 20px;
+    margin: 20px;
+  display: flex;
+    justify-content:flex-end;
     background: $purple;
-    border: none;
-    border-bottom: .3rem solid darken($purple, 10%);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border: .3rem solid darken($purple, 10%);
     color: white;
-    font-weight: 500;
-    padding: $s-size;
+    font-weight: bold;
+    border-radius: 20%;
+    
   }
   
   .button--link {
