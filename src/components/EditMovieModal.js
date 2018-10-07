@@ -12,7 +12,7 @@ class EditMovieModal extends React.Component {
 
         this.state = {
             Title: props.Title,
-            Year:props.Year,
+            Year: props.Year,
             Runtime: props.Runtime,
             Genre: props.Genre,
             Director: props.Director,
@@ -60,11 +60,11 @@ class EditMovieModal extends React.Component {
 
         if (!this.state.Title || !this.state.Year || !this.state.Genre || !this.state.Runtime || !this.state.Director) {
             this.setState(() => ({ error: "Fields should be with values!" }));
-        } else if (this.props.movies.find((movie) => movie.Title === this.state.Title)) {
+        } else if (this.props.movies.find((movie) => movie.Title === this.state.Title && movie.imdbID !== this.props.imdbID)) {
             this.setState(() => ({ error: "Title Allready exist!!" }));
         } else if (parseInt(this.state.Year) > new Date().getFullYear()) {
             this.setState(() => ({ error: "Year is not valid!!" }));
-        }else {
+        } else {
             this.setState(() => ({ error: "" }));
             this.props.startEditMovie(this.state.imdbID, {
                 Title: this.formatTitle(this.state.Title),
@@ -78,11 +78,16 @@ class EditMovieModal extends React.Component {
         }
     }
 
+    closeModal = () => {
+        this.setState(() => ({ error: "" }));
+        this.props.closeModal();
+    }
+
     render() {
         return (
             <Modal
                 isOpen={!!this.props.isModalOpen}
-                onRequestClose={this.props.closeModal}
+                onRequestClose={this.closeModal}
                 contentLabel="EDIT MOVIE"
                 closeTimeoutMS={200}
                 className="modal">
@@ -96,7 +101,7 @@ class EditMovieModal extends React.Component {
                         <span>TITLE:</span>
                         <input
                             type="text"
-                        
+
                             value={this.state.Title}
                             onChange={this.onTitleChange} />
                     </div>
@@ -113,7 +118,7 @@ class EditMovieModal extends React.Component {
                         <span>RUNTIME:</span>
                         <input
                             type="text"
-                          
+
                             value={this.state.Runtime}
                             onChange={this.onRuntimeChange} />
                     </div>
@@ -137,7 +142,7 @@ class EditMovieModal extends React.Component {
 
                 <div className="flex d-row j-space-between">
                     <button className="button" onClick={this.handleSave}>Save</button>
-                    <button className="button" onClick={this.props.closeModal}>Cancel</button>
+                    <button className="button" onClick={this.closeModal}>Cancel</button>
                 </div>
             </Modal>
         )

@@ -31,6 +31,14 @@ $desktop-breakpoint: 45rem;
     &.d-col {
      flex-direction: column;
     }
+
+    &.a-center {
+      align-items: center;
+    }
+
+    &.j-center {
+      justify-content: center;
+    }
  
     &.j-space-between {
       justify-content: space-between;

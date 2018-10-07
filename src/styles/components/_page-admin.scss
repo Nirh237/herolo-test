@@ -1,6 +1,6 @@
 
 .Rectangle {
-
+display: inline;
     width: 100%;
     height: 100%;
     background-color: #ffffff;
@@ -18,72 +18,18 @@
     flex-wrap:wrap;
     position: relative;
     width: 100%;
-    height: 50%;
+    // height: 50%;
     background-color: #ffffff;
+    padding: 30px 0px;
+    padding-bottom: 90px;
     
   }
 
-  .AdminHome {
-    width: 375px;
-    height: 667px;
-    background-color: #ececec;
-  }
-
-
-  .layer {
-    width: 135px;
-    height: 42px;
-    font-family: Roboto;
-    font-size: 36px;
-    font-weight: 500;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -1.1px;
-    text-align: center;
-    color: #4a90e2;
-    position: relative;
-    bottom: 27px;
-    left: 28px;
-  }
-
-  .layer2{
-    @extend .layer;
-    position: absolute;
-    left: 216px;
-    bottom: 50px;
-
-  }
-
-  .Rectangle-Copy {
-    width: 375px;
-    height: 133px;
-    background-color: #ffffff;
-    position: absolute;
-    top: 229px;
-  }
-
-
-  .layer3{
-    @extend .layer;
-    position: absolute;
-    top: 56px;
-    left: 132px;
-  }
-
-
- 
-  .layer4{
-      @extend .layer;
-      position: absolute;
-      top: 56px;
-      left: 132px;
-      
-  }
-
-  .Rectangle-Copy3 {
-    @extend .Rectangle-Copy;
-    position: absolute;
-    top: 515px;
+.Footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 2px solid #9a9a9a;
+  background-color: #cecece;
 }
 

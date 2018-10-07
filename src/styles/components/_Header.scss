@@ -5,9 +5,9 @@
     background: $purple;
     border: none;
     border-bottom: .6rem solid darken($purple, 10%);
-    margin-bottom: $xl-size;
+    // margin-bottom: $xl-size;
     padding: 2.4rem;
-    width: 94.9%;
+    // width: 94.9%;
    
 
 }
@@ -33,14 +33,15 @@
     
     width: 200;
     height: 24px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-    font-size: 40px;
+    // font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    // font-size: 40px;
+    font-size: 2em;
     color: white;
-    font-weight: bold;
-    font-style: italic;
+    // font-weight: bold;
+    // font-style: italic;
     font-stretch: normal;
     line-height: normal;
-    letter-spacing: -0.5px;
+    letter-spacing: 1px;
     text-align: center;
     padding-top: 9px;
     padding-bottom: 11px;

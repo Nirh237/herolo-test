@@ -4,3 +4,9 @@
 @import './components/SimpleCard';
 @import './components/modal';
 @import './components/button';
+
+body {
+    div {
+        font-family: 'Open Sans', sans-serif !important;
+    }
+}

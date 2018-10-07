@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import { getMovieByTitle } from '../actions/movies';
@@ -49,14 +49,21 @@ class MoviePage extends React.Component {
         <div className="List">
           {movies.map((movie) => { return <MovieListItem key={movie.Title} {...movie} />; })}
 
-          <button className="big-button" onClick={() => this.openModal()}> Add Movie </button>
-      
-          <AddMovieModal
-            isModalOpen={this.state.isAddMovieModalOpen}
-            closeModal={this.closeModal} />
+
         </div>
-      
- 
+
+        <div className="flex a-center j-center Footer">
+
+          <div className="flex a-center j-center">
+
+            <button className="flex a-center j-center big-button" onClick={() => this.openModal()}> + </button>
+
+            <AddMovieModal
+              isModalOpen={this.state.isAddMovieModalOpen}
+              closeModal={this.closeModal} />
+
+          </div>
+        </div>
 
 
       </div>
