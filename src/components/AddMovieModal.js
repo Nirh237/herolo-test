@@ -11,7 +11,8 @@ class AddMovieModal extends React.Component {
         super(props);
 
         this.state = {
-            title: ''
+            title: '',
+            error:''
         };
     }
 
@@ -30,8 +31,14 @@ class AddMovieModal extends React.Component {
 
     handleAdd = (e) => {
         e.preventDefault();
-        this.props.getMovieByTitle(this.formatTitle(this.state.title))
-        this.props.closeModal();
+
+        if (!this.state.title ) {
+            this.setState(() => ({ error: "Title is empty!!" }));
+        }else{
+            this.props.getMovieByTitle(this.formatTitle(this.state.title))
+            this.props.closeModal();
+        }
+       
     }
 
     render() {
