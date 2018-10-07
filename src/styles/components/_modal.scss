@@ -40,6 +40,35 @@
 
   }
 
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    >* {
+      margin-bottom: $l-size;
+    }
+  }
+  
+  .form__error {
+    margin: 0 0 $m-size 0;
+    font-style: italic;
+    background-color: red;
+    color: white;
+  }
+  
+  .form__title {
+    color: white;
+  }
+
+
+    input {
+      padding: 3px 5px;
+      border: 1px solid #7f7f7f;
+      width: 300px;
+      border-radius: 4px;
+    }
+  
+
   .input-form {
     span {
       font-size: 14px;
