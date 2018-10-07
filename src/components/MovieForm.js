@@ -17,27 +17,27 @@ class MovieForm extends React.Component {
     }
 
     onTitleChange = (e) => {
-        const Title = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Title = e.target.value; 
         this.setState(() => ({ Title }));
     };
 
     onYearChange = (e) => {
-        const Year = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Year = e.target.value; 
         this.setState(() => ({ Year }));
     };
 
     onRuntimeChange = (e) => {
-        const Runtime = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Runtime = e.target.value; 
         this.setState(() => ({ Runtime }));
     };
 
     onGenreChange = (e) => {
-        const Genre = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Genre = e.target.value; 
         this.setState(() => ({ Genre }));
     };
 
     onDirectorChange = (e) => {
-        const Director = e.target.value; //  e.persist(); אחד מהשניים הוא חובה
+        const Director = e.target.value;
         this.setState(() => ({ Director }));
     };
 

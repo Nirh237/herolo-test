@@ -1,9 +1,10 @@
-import React from 'react';
+import React  from 'react';
 import { connect } from 'react-redux';
 import Header from '../components/Header';
 import { getMovieByTitle } from '../actions/movies';
 import MovieListItem from '../components/MovieListItem';
 import AddMovieModal from '../components/AddMovieModal';
+
 
 
 class MoviePage extends React.Component {
@@ -49,11 +50,13 @@ class MoviePage extends React.Component {
           {movies.map((movie) => { return <MovieListItem key={movie.Title} {...movie} />; })}
 
           <button className="big-button" onClick={() => this.openModal()}> Add Movie </button>
-
+      
           <AddMovieModal
             isModalOpen={this.state.isAddMovieModalOpen}
             closeModal={this.closeModal} />
         </div>
+      
+ 
 
 
       </div>

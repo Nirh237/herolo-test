@@ -57,7 +57,7 @@ class EditMovieModal extends React.Component {
 
     handleSave = (e) => {
         e.preventDefault();
-debugger;
+
         if (!this.state.Title || !this.state.Year || !this.state.Genre || !this.state.Runtime || !this.state.Director) {
             this.setState(() => ({ error: "Fields should be with values!" }));
         } else if (this.props.movies.find((movie) => movie.Title === this.state.Title)) {
@@ -73,13 +73,10 @@ debugger;
                 Genre: this.state.Genre,
                 Director: this.state.Director,
                 Poster: this.state.Poster
-
             });
             this.props.closeModal();
         }
     }
-
-
 
     render() {
         return (

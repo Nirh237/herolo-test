@@ -31,19 +31,14 @@ const getMovieByTitle = (title) => {
       .then(res => {
         console.log(res);
 
-
         const movie = res.data;
 
-
-
         if (movie.Response === "True") {
-          // localStorage.setItem("movies",movie.Year);
           dispatch(addMovie(movie));
         }
         else {
           dispatch(error('Error'));
         }
-
       }).catch((error) => {
         console.log(error);
       })
@@ -62,22 +57,14 @@ const startEditMovie = (imdbID, updates) => {
 
 const startDelteMovie = ({ imdbID = {} }) => {
   return (dispatch) => {
-
     dispatch(deleteMovie({ imdbID }));
-
   };
 };
-
-
-
 
 export {
   getMovieByTitle,
   startEditMovie,
   startDelteMovie
-
 }
 
 
-
-//http://www.omdbapi.com/?s=Batman&page=1&apikey=98f17da2

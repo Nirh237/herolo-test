@@ -19,7 +19,6 @@ class DeleteMovieModal extends React.Component {
         this.props.startDelteMovie({ imdbID: this.props.imdbID })
     }
 
-
     render() {
         return (
             <Modal
@@ -38,9 +37,7 @@ class DeleteMovieModal extends React.Component {
                 </div>
             </Modal>
         )
-
     }
-
 }
 
 const mapStateToProps = (state, props) => ({

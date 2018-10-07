@@ -7,7 +7,6 @@ export const Header = () => (
         <div className="header__title" >
       Herolo Cinema
         </div>
-       
       </div>
     </div>
   </header>

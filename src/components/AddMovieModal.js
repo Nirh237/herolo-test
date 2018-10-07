@@ -12,7 +12,7 @@ class AddMovieModal extends React.Component {
 
         this.state = {
             title: '',
-            error:''
+            error: ''
         };
     }
 
@@ -32,13 +32,13 @@ class AddMovieModal extends React.Component {
     handleAdd = (e) => {
         e.preventDefault();
 
-        if (!this.state.title ) {
+        if (!this.state.title) {
             this.setState(() => ({ error: "Title is empty!!" }));
-        }else{
+        } else {
             this.props.getMovieByTitle(this.formatTitle(this.state.title))
             this.props.closeModal();
         }
-       
+
     }
 
     render() {
@@ -46,7 +46,7 @@ class AddMovieModal extends React.Component {
             <Modal
                 isOpen={!!this.props.isModalOpen}
                 onRequestClose={this.props.closeModal}
-                contentLabel="EDIT MOVIE"
+                contentLabel="ADD MOVIE"
                 closeTimeoutMS={200}
                 className="modal">
 
@@ -61,7 +61,7 @@ class AddMovieModal extends React.Component {
                             type="text"
                             autoFocus
                             value={this.state.Title}
-                            onChange={this.onTitleChange}/>
+                            onChange={this.onTitleChange} />
                     </div>
                 </form>
 

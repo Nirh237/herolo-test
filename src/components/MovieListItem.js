@@ -95,9 +95,7 @@ class MovieListItem extends React.Component {
               imdbID={imdbID}/>
 
           </div>
-
         </CardContent>
-
       </Card>
     )
   }
