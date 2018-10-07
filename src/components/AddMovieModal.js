@@ -41,6 +41,12 @@ class AddMovieModal extends React.Component {
 
     }
 
+    closeModal = () => {
+        debugger;
+        this.setState(() => ({ error: "" }));
+        this.props.closeModal();
+    }
+
     render() {
         return (
             <Modal
@@ -67,7 +73,7 @@ class AddMovieModal extends React.Component {
 
                 <div className="flex d-row j-space-between">
                     <button className="button" onClick={this.handleAdd}>Add</button>
-                    <button className="button" onClick={this.props.closeModal}>Cancel</button>
+                    <button className="button" onClick={this.closeModal}>Cancel</button>
                 </div>
             </Modal>
         )

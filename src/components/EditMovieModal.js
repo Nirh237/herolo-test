@@ -79,6 +79,7 @@ class EditMovieModal extends React.Component {
     }
 
     closeModal = () => {
+        debugger;
         this.setState(() => ({ error: "" }));
         this.props.closeModal();
     }
