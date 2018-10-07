@@ -99,7 +99,7 @@ debugger;
                         <span>TITLE:</span>
                         <input
                             type="text"
-                            autoFocus
+                        
                             value={this.state.Title}
                             onChange={this.onTitleChange} />
                     </div>
