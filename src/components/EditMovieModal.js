@@ -116,7 +116,7 @@ debugger;
                         <span>RUNTIME:</span>
                         <input
                             type="text"
-                            autoFocus
+                          
                             value={this.state.Runtime}
                             onChange={this.onRuntimeChange} />
                     </div>
