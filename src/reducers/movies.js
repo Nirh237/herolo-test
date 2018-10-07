@@ -14,6 +14,7 @@ const MovieReducer = (state = MovieReducerDefaultState, action) => {
       });
 
       case 'DELETE_MOVIE': return state.filter(({imdbID}) => imdbID !== action.imdbID );
+      
 
       default:
         return state;

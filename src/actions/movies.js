@@ -36,7 +36,7 @@ const getMovieByTitle = (title) => {
 
 
 
-        if (movie != null) {
+        if (movie.Response === "True") {
           // localStorage.setItem("movies",movie.Year);
           dispatch(addMovie(movie));
         }
