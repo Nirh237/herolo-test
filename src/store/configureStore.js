@@ -1,4 +1,4 @@
-import { createStore, combineReducers, applyMiddleware, compose } from '../../../../AppData/Local/Microsoft/TypeScript/2.9/node_modules/redux';
+import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import MovieReducer from '../reducers/movies';
 
