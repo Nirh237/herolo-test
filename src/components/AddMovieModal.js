@@ -51,12 +51,12 @@ class AddMovieModal extends React.Component {
                 className="modal">
 
                 <h3 className="modal__title">Add Movie</h3>
-                <p className="modal__body"></p>
+              
 
                 <form className="form"  >
                     {this.state.error && <p className="form__error">{this.state.error}</p>}
                     <div className="flex d-col input-form">
-                        <span>Enter full movie title:</span>
+                        <span>Enter full movie title (for example 'Shrek') :</span>
                         <input
                             type="text"
                             autoFocus
