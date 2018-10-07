@@ -29,7 +29,7 @@ const getMovieByTitle = (title) => {
 
     return axios.post(`https://www.omdbapi.com/?&apikey=98f17da2&t='${title}'`)
       .then(res => {
-        console.log(res);
+      
 
         const movie = res.data;
 
@@ -40,7 +40,7 @@ const getMovieByTitle = (title) => {
           dispatch(error('Error'));
         }
       }).catch((error) => {
-        console.log(error);
+     
       })
   };
 };
