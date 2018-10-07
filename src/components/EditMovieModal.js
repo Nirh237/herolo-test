@@ -12,7 +12,7 @@ class EditMovieModal extends React.Component {
 
         this.state = {
             Title: props.Title,
-            Year: props.Year,
+            Year:props.Year,
             Runtime: props.Runtime,
             Genre: props.Genre,
             Director: props.Director,
@@ -28,6 +28,7 @@ class EditMovieModal extends React.Component {
             .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
             .join(' ')
     }
+
 
     onTitleChange = (e) => {
         const Title = e.target.value;
@@ -56,12 +57,14 @@ class EditMovieModal extends React.Component {
 
     handleSave = (e) => {
         e.preventDefault();
-
+debugger;
         if (!this.state.Title || !this.state.Year || !this.state.Genre || !this.state.Runtime || !this.state.Director) {
             this.setState(() => ({ error: "Fields should be with values!" }));
         } else if (this.props.movies.find((movie) => movie.Title === this.state.Title)) {
             this.setState(() => ({ error: "Title Allready exist!!" }));
-        } else {
+        } else if (parseInt(this.state.Year) > new Date().getFullYear()) {
+            this.setState(() => ({ error: "Year is not valid!!" }));
+        }else {
             this.setState(() => ({ error: "" }));
             this.props.startEditMovie(this.state.imdbID, {
                 Title: this.formatTitle(this.state.Title),
