@@ -34,7 +34,9 @@ class AddMovieModal extends React.Component {
 
         if (!this.state.title) {
             this.setState(() => ({ error: "Title is empty!!" }));
-        } else {
+        } else if(this.props.movies.find((movie) => movie.Title === this.state.title && movie.imdbID !== this.props.imdbID)) {
+            this.setState(() => ({ error: "Title Allready exist!!" }));
+        }else{
             this.props.getMovieByTitle(this.formatTitle(this.state.title))
             this.props.closeModal();
         }
